@@ -299,7 +299,7 @@ export interface DatabaseProxyAttributes {
 /**
  * DB Proxy
  */
-export interface IDatabaseProxy extends cdk.IResource {
+export interface IDatabaseProxy extends cdk.IResource, cdk.ITaggableV2 {
   /**
    * DB Proxy Name
    *
@@ -341,6 +341,7 @@ abstract class DatabaseProxyBase extends cdk.Resource implements IDatabaseProxy 
   public abstract readonly dbProxyName: string;
   public abstract readonly dbProxyArn: string;
   public abstract readonly endpoint: string;
+  public readonly cdkTagManager: cdk.TagManager = new cdk.TagManager(cdk.TagType.STANDARD, 'AWS::RDS::DBProxy');
 
   public grantConnect(grantee: iam.IGrantable, dbUser?: string): iam.Grant {
     if (!dbUser) {
@@ -461,6 +462,7 @@ export class DatabaseProxy extends DatabaseProxyBase
       roleArn: role.roleArn,
       vpcSecurityGroupIds: cdk.Lazy.list({ produce: () => this.connections.securityGroups.map(_ => _.securityGroupId) }),
       vpcSubnetIds: props.vpc.selectSubnets(props.vpcSubnets).subnetIds,
+      tags: this.cdkTagManager.renderedTags as any,
     });
 
     this.dbProxyName = this.resource.ref;

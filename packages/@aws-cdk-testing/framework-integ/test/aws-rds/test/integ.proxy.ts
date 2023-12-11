@@ -36,12 +36,13 @@ const cluster = new rds.DatabaseCluster(stack, 'dbCluster', {
   instanceProps: { vpc },
 });
 
-new rds.DatabaseProxy(stack, 'Proxy', {
+const proxy = new rds.DatabaseProxy(stack, 'Proxy', {
   dbProxyName: 'cluster-db-proxy',
   proxyTarget: rds.ProxyTarget.fromCluster(cluster),
   secrets: [cluster.secret!],
   vpc,
 });
+cdk.Tags.of(proxy).add('Env', 'dev');
 
 new integ.IntegTest(app, 'database-proxy-integ-test', {
   testCases: [stack],

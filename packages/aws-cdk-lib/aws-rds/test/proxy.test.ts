@@ -407,6 +407,34 @@ describe('proxy', () => {
       ],
     });
   });
+
+  test('cat set tags', () => {
+    // GIVEN
+    const instance = new rds.DatabaseInstance(stack, 'Instance', {
+      engine: rds.DatabaseInstanceEngine.mysql({
+        version: rds.MysqlEngineVersion.VER_5_7,
+      }),
+      vpc,
+    });
+
+    // WHEN
+    const proxy = new rds.DatabaseProxy(stack, 'Proxy', {
+      proxyTarget: rds.ProxyTarget.fromInstance(instance),
+      secrets: [instance.secret!],
+      vpc,
+    });
+    cdk.Tags.of(proxy).add('Env', 'dev');
+
+    // THEN
+    Template.fromStack(stack).hasResourceProperties('AWS::RDS::DBProxy', {
+      Tags: [
+        {
+          Key: 'Env',
+          Value: 'dev',
+        },
+      ],
+    });
+  });
 });
 
 describe('feature flag @aws-cdk/aws-rds:databaseProxyUniqueResourceName', () => {

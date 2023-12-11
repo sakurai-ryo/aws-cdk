@@ -901,6 +901,8 @@ connections to the database and improve scalability of the application. Learn mo
 The following code configures an RDS Proxy for a `DatabaseInstance`.
 
 ```ts
+import { Tags } from 'aws-cdk-lib';
+
 declare const vpc: ec2.Vpc;
 declare const securityGroup: ec2.SecurityGroup;
 declare const secrets: secretsmanager.Secret[];
@@ -912,6 +914,8 @@ const proxy = dbInstance.addProxy('proxy', {
     secrets,
     vpc,
 });
+// If you want to set tags on the Proxy
+cdk.Tags.of(proxy).add('Env', 'dev');
 ```
 
 ## Exporting Logs
