@@ -422,7 +422,7 @@ Therefore, when deploying many objects, deploying the stack may result in an err
 To avoid this error, you can use the `discardReturnedSourceObjectKeys` option.
 This option will prevent the custom resource from returning deployed object keys, thus avoiding this error.
 
-Note that this will result in an empty list being returned from the `objectKeys` getter, which cannot be referenced correctly.
+Note that the `objectKeys` getter will return an empty array if `discardReturnedSourceObjectKeys` property is set to `true`.
 
 ## Notes
 
