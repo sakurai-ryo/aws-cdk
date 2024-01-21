@@ -415,6 +415,15 @@ new cdk.CfnOutput(this, 'ObjectKey', {
 });
 ```
 
+## Deploy a large number of objects
+The object keys deployed to the S3 bucket can be got by the `objectKeys` getter.
+These are the custom resource's return values, but the response body's total size cannot exceed 4096 bytes for the custom resource.
+Therefore, when deploying many objects, deploying the stack may result in an error.
+To avoid this error, you can use the `discardReturnedSourceObjectKeys` option.
+This option will prevent the custom resource from returning deployed object keys, thus avoiding this error.
+
+Note that this will result in an empty list being returned from the `objectKeys` getter, which cannot be referenced correctly.
+
 ## Notes
 
 - This library uses an AWS CloudFormation custom resource which is about 10MiB in

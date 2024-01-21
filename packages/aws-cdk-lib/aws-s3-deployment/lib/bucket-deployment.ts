@@ -252,6 +252,18 @@ export interface BucketDeploymentProps {
    * @default - `x-amz-content-sha256` will not be computed
    */
   readonly signContent?: boolean;
+
+  /**
+   * Object keys deployed to the S3 bucket can be referenced by the `objectKeys` getter.
+   * This is useful, but when a large number of objects are deployed,
+   * the custom resource need to return large keys and result in the custom resource error.
+   * If you encounter this error, set this property to `true` to discard object keys.
+   *
+   * Note that the `objectKeys` getter will return an empty array if this property is set to `true`.
+   *
+   * @default false
+   */
+  readonly discardReturnedSourceObjectKeys?: boolean;
 }
 
 /**
@@ -404,6 +416,7 @@ export class BucketDeployment extends Construct {
         SignContent: props.signContent,
         // Passing through the ARN sequences dependency on the deployment
         DestinationBucketArn: cdk.Lazy.string({ produce: () => this.requestDestinationArn ? this.destinationBucket.bucketArn : undefined }),
+        DiscardReturnedSourceObjectKeys: props.discardReturnedSourceObjectKeys !== undefined ? props.discardReturnedSourceObjectKeys : false,
       },
     });
 
@@ -497,6 +510,8 @@ export class BucketDeployment extends Construct {
    *
    * For example, use `Fn.select(0, myBucketDeployment.objectKeys)` to reference the object key of the
    * first source file in your bucket deployment.
+   *
+   * Note that this getter will return an empty array if `discardSourceObjectKeys` property is set to `true`.
    */
   public get objectKeys(): string[] {
     const objectKeys = cdk.Token.asList(this.cr.getAtt('SourceObjectKeys'));

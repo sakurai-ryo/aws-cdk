@@ -576,7 +576,7 @@ class TestHandler(unittest.TestCase):
             "DestinationBucketName": "<dest-bucket-name>",
         }, expected_status="FAILED")
 
-        self.assertEqual(update_resp['Reason'], "invalid request: request type is 'Update' but 'PhysicalResourceId' is not defined")
+        self.assertEqual(update_resp['Reason'], "invalid request: request type is '{'Update'}' but 'PhysicalResourceId' is not defined")
 
     def test_fails_when_physical_id_not_present_in_delete(self):
         def mock_make_api_call(self, operation_name, kwarg):
@@ -593,7 +593,7 @@ class TestHandler(unittest.TestCase):
                 "DestinationBucketName": "<dest-bucket-name>",
             }, expected_status="FAILED")
 
-        self.assertEqual(update_resp['Reason'], "invalid request: request type is 'Delete' but 'PhysicalResourceId' is not defined")
+        self.assertEqual(update_resp['Reason'], "invalid request: request type is '{'Delete'}' but 'PhysicalResourceId' is not defined")
 
     def test_physical_id_on_cloud_front_error(self):
         def mock_make_api_call(self, operation_name, kwarg):
@@ -630,7 +630,7 @@ class TestHandler(unittest.TestCase):
         self.assertAwsCommands(
             ["s3", "rm", "s3://<dest-bucket-name>/", "--recursive"]
         )
-    
+
     def test_replace_markers(self):
         index.extract_and_replace_markers("test.zip", "/tmp/out", {
             "_marker2_": "boom-marker2-replaced",
@@ -670,6 +670,15 @@ class TestHandler(unittest.TestCase):
         with open(os.path.join(workdir, "subfolder", "boom.txt"), "r") as file:
             self.assertEqual(file.read().rstrip(), "Another value1-source2 file with _marker2_ hey!\nLine 2 with value1-source2 again :-)")
 
+    def test_discard_source_object_keys(self):
+        resp = invoke_handler("Create", {
+            "SourceBucketNames": ["<source-bucket>"],
+            "SourceObjectKeys": ["<source-object-key>"],
+            "DestinationBucketName": "<new-dest-bucket-name>",
+            "DiscardReturnedSourceObjectKeys": "true",
+        })
+
+        self.assertListEqual(resp["Data"]["SourceObjectKeys"], [])
 
     # asserts that a given list of "aws xxx" commands have been invoked (in order)
     def assertAwsCommands(self, *expected):

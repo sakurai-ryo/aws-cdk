@@ -1358,6 +1358,7 @@ test('"SourceMarkers" is not included if none of the sources have markers', () =
     'SourceObjectKeys',
     'DestinationBucketName',
     'Prune',
+    'DiscardReturnedSourceObjectKeys',
   ]);
 });
 
@@ -1667,4 +1668,30 @@ test('DeployTimeSubstitutedFile allows custom role to be supplied', () => {
       ],
     },
   });
+});
+
+test('DiscardReturnedSourceObjectKeys is passed to the CustomResource', () => {
+  const stack = new cdk.Stack();
+  const bucket = new s3.Bucket(stack, 'Bucket');
+  new s3deploy.BucketDeployment(stack, 'Deploy', {
+    sources: [s3deploy.Source.asset(path.join(__dirname, 'my-website'))],
+    destinationBucket: bucket,
+  });
+  new s3deploy.BucketDeployment(stack, 'Deploy2', {
+    sources: [s3deploy.Source.asset(path.join(__dirname, 'my-website'))],
+    destinationBucket: bucket,
+    discardReturnedSourceObjectKeys: false,
+  });
+  new s3deploy.BucketDeployment(stack, 'Deploy3', {
+    sources: [s3deploy.Source.asset(path.join(__dirname, 'my-website'))],
+    destinationBucket: bucket,
+    discardReturnedSourceObjectKeys: true,
+  });
+
+  Template.fromStack(stack).resourcePropertiesCountIs('Custom::CDKBucketDeployment', {
+    DiscardReturnedSourceObjectKeys: false,
+  }, 2);
+  Template.fromStack(stack).resourcePropertiesCountIs('Custom::CDKBucketDeployment', {
+    DiscardReturnedSourceObjectKeys: true,
+  }, 1);
 });
