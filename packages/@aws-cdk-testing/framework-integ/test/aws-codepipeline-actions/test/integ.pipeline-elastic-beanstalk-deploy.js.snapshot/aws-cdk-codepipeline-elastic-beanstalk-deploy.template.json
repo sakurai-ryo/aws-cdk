@@ -182,7 +182,8 @@
      "Ref": "PipelineBucketB967BD35"
     },
     "Extract": false,
-    "Prune": true
+    "Prune": true,
+    "DiscardReturnedSourceObjectKeys": false
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -319,7 +320,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "e976a796f036a5efbf44b99e44cfb5a961df08d8dbf7cd37e60bf216fb982a00.zip"
+     "S3Key": "ca591bb578ccab75dff666122d52cf3359c7a4748a08ffb04db4c096f59c7e19.zip"
     },
     "Environment": {
      "Variables": {
@@ -441,7 +442,7 @@
       "Value": "AWSServiceRoleForElasticBeanstalkManagedUpdates"
      }
     ],
-    "SolutionStackName": "64bit Amazon Linux 2023 v6.0.2 running Node.js 18"
+    "SolutionStackName": "64bit Amazon Linux 2023 v6.0.4 running Node.js 18"
    },
    "DependsOn": [
     "beastalkapp",
