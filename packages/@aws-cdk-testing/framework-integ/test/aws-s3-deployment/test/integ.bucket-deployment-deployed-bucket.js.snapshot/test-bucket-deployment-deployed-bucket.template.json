@@ -185,7 +185,8 @@
       "Destination920A3C57",
       "Arn"
      ]
-    }
+    },
+    "DiscardReturnedSourceObjectKeys": false
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -322,7 +323,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "e976a796f036a5efbf44b99e44cfb5a961df08d8dbf7cd37e60bf216fb982a00.zip"
+     "S3Key": "ca591bb578ccab75dff666122d52cf3359c7a4748a08ffb04db4c096f59c7e19.zip"
     },
     "Environment": {
      "Variables": {

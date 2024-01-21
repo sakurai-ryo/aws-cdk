@@ -1,0 +1,1934 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "TestBucketDeployment": {
+        "id": "TestBucketDeployment",
+        "path": "TestBucketDeployment",
+        "children": {
+          "Bucket": {
+            "id": "Bucket",
+            "path": "TestBucketDeployment/Bucket",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "TestBucketDeployment/Bucket/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                  "aws:cdk:cloudformation:props": {
+                    "tags": [
+                      {
+                        "key": "aws-cdk:cr-owned:7afcc2e7",
+                        "value": "true"
+                      }
+                    ]
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3.CfnBucket",
+                  "version": "0.0.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_s3.Bucket",
+              "version": "0.0.0"
+            }
+          },
+          "BucketDeployment": {
+            "id": "BucketDeployment",
+            "path": "TestBucketDeployment/BucketDeployment",
+            "children": {
+              "AwsCliLayer": {
+                "id": "AwsCliLayer",
+                "path": "TestBucketDeployment/BucketDeployment/AwsCliLayer",
+                "children": {
+                  "Code": {
+                    "id": "Code",
+                    "path": "TestBucketDeployment/BucketDeployment/AwsCliLayer/Code",
+                    "children": {
+                      "Stage": {
+                        "id": "Stage",
+                        "path": "TestBucketDeployment/BucketDeployment/AwsCliLayer/Code/Stage",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.AssetStaging",
+                          "version": "0.0.0"
+                        }
+                      },
+                      "AssetBucket": {
+                        "id": "AssetBucket",
+                        "path": "TestBucketDeployment/BucketDeployment/AwsCliLayer/Code/AssetBucket",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                          "version": "0.0.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "TestBucketDeployment/BucketDeployment/AwsCliLayer/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::LayerVersion",
+                      "aws:cdk:cloudformation:props": {
+                        "content": {
+                          "s3Bucket": {
+                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                          },
+                          "s3Key": "3fb6287214999ddeafa7cd0e3e58bc5144c8678bb720f3b5e45e8fd32f333eb3.zip"
+                        },
+                        "description": "/opt/awscli/aws"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnLayerVersion",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.lambda_layer_awscli.AwsCliLayer",
+                  "version": "0.0.0"
+                }
+              },
+              "CustomResourceHandler": {
+                "id": "CustomResourceHandler",
+                "path": "TestBucketDeployment/BucketDeployment/CustomResourceHandler",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.SingletonFunction",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset1": {
+                "id": "Asset1",
+                "path": "TestBucketDeployment/BucketDeployment/Asset1",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset1/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset1/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset2": {
+                "id": "Asset2",
+                "path": "TestBucketDeployment/BucketDeployment/Asset2",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset2/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset2/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset3": {
+                "id": "Asset3",
+                "path": "TestBucketDeployment/BucketDeployment/Asset3",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset3/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset3/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset4": {
+                "id": "Asset4",
+                "path": "TestBucketDeployment/BucketDeployment/Asset4",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset4/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset4/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset5": {
+                "id": "Asset5",
+                "path": "TestBucketDeployment/BucketDeployment/Asset5",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset5/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset5/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset6": {
+                "id": "Asset6",
+                "path": "TestBucketDeployment/BucketDeployment/Asset6",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset6/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset6/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset7": {
+                "id": "Asset7",
+                "path": "TestBucketDeployment/BucketDeployment/Asset7",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset7/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset7/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset8": {
+                "id": "Asset8",
+                "path": "TestBucketDeployment/BucketDeployment/Asset8",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset8/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset8/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset9": {
+                "id": "Asset9",
+                "path": "TestBucketDeployment/BucketDeployment/Asset9",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset9/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset9/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset10": {
+                "id": "Asset10",
+                "path": "TestBucketDeployment/BucketDeployment/Asset10",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset10/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset10/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset11": {
+                "id": "Asset11",
+                "path": "TestBucketDeployment/BucketDeployment/Asset11",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset11/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset11/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset12": {
+                "id": "Asset12",
+                "path": "TestBucketDeployment/BucketDeployment/Asset12",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset12/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset12/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset13": {
+                "id": "Asset13",
+                "path": "TestBucketDeployment/BucketDeployment/Asset13",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset13/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset13/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset14": {
+                "id": "Asset14",
+                "path": "TestBucketDeployment/BucketDeployment/Asset14",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset14/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset14/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset15": {
+                "id": "Asset15",
+                "path": "TestBucketDeployment/BucketDeployment/Asset15",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset15/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset15/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset16": {
+                "id": "Asset16",
+                "path": "TestBucketDeployment/BucketDeployment/Asset16",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset16/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset16/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset17": {
+                "id": "Asset17",
+                "path": "TestBucketDeployment/BucketDeployment/Asset17",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset17/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset17/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset18": {
+                "id": "Asset18",
+                "path": "TestBucketDeployment/BucketDeployment/Asset18",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset18/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset18/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset19": {
+                "id": "Asset19",
+                "path": "TestBucketDeployment/BucketDeployment/Asset19",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset19/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset19/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset20": {
+                "id": "Asset20",
+                "path": "TestBucketDeployment/BucketDeployment/Asset20",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset20/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset20/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset21": {
+                "id": "Asset21",
+                "path": "TestBucketDeployment/BucketDeployment/Asset21",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset21/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset21/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset22": {
+                "id": "Asset22",
+                "path": "TestBucketDeployment/BucketDeployment/Asset22",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset22/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset22/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset23": {
+                "id": "Asset23",
+                "path": "TestBucketDeployment/BucketDeployment/Asset23",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset23/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset23/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset24": {
+                "id": "Asset24",
+                "path": "TestBucketDeployment/BucketDeployment/Asset24",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset24/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset24/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset25": {
+                "id": "Asset25",
+                "path": "TestBucketDeployment/BucketDeployment/Asset25",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset25/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset25/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset26": {
+                "id": "Asset26",
+                "path": "TestBucketDeployment/BucketDeployment/Asset26",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset26/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset26/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset27": {
+                "id": "Asset27",
+                "path": "TestBucketDeployment/BucketDeployment/Asset27",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset27/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset27/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset28": {
+                "id": "Asset28",
+                "path": "TestBucketDeployment/BucketDeployment/Asset28",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset28/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset28/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset29": {
+                "id": "Asset29",
+                "path": "TestBucketDeployment/BucketDeployment/Asset29",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset29/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset29/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset30": {
+                "id": "Asset30",
+                "path": "TestBucketDeployment/BucketDeployment/Asset30",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset30/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset30/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset31": {
+                "id": "Asset31",
+                "path": "TestBucketDeployment/BucketDeployment/Asset31",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset31/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset31/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset32": {
+                "id": "Asset32",
+                "path": "TestBucketDeployment/BucketDeployment/Asset32",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset32/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset32/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset33": {
+                "id": "Asset33",
+                "path": "TestBucketDeployment/BucketDeployment/Asset33",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset33/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset33/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset34": {
+                "id": "Asset34",
+                "path": "TestBucketDeployment/BucketDeployment/Asset34",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset34/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset34/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset35": {
+                "id": "Asset35",
+                "path": "TestBucketDeployment/BucketDeployment/Asset35",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset35/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset35/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset36": {
+                "id": "Asset36",
+                "path": "TestBucketDeployment/BucketDeployment/Asset36",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset36/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset36/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset37": {
+                "id": "Asset37",
+                "path": "TestBucketDeployment/BucketDeployment/Asset37",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset37/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset37/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset38": {
+                "id": "Asset38",
+                "path": "TestBucketDeployment/BucketDeployment/Asset38",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset38/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset38/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset39": {
+                "id": "Asset39",
+                "path": "TestBucketDeployment/BucketDeployment/Asset39",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset39/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset39/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset40": {
+                "id": "Asset40",
+                "path": "TestBucketDeployment/BucketDeployment/Asset40",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset40/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset40/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset41": {
+                "id": "Asset41",
+                "path": "TestBucketDeployment/BucketDeployment/Asset41",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset41/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset41/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset42": {
+                "id": "Asset42",
+                "path": "TestBucketDeployment/BucketDeployment/Asset42",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset42/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset42/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset43": {
+                "id": "Asset43",
+                "path": "TestBucketDeployment/BucketDeployment/Asset43",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset43/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset43/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset44": {
+                "id": "Asset44",
+                "path": "TestBucketDeployment/BucketDeployment/Asset44",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset44/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset44/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset45": {
+                "id": "Asset45",
+                "path": "TestBucketDeployment/BucketDeployment/Asset45",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset45/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset45/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset46": {
+                "id": "Asset46",
+                "path": "TestBucketDeployment/BucketDeployment/Asset46",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset46/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset46/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset47": {
+                "id": "Asset47",
+                "path": "TestBucketDeployment/BucketDeployment/Asset47",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset47/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset47/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset48": {
+                "id": "Asset48",
+                "path": "TestBucketDeployment/BucketDeployment/Asset48",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset48/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset48/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset49": {
+                "id": "Asset49",
+                "path": "TestBucketDeployment/BucketDeployment/Asset49",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset49/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset49/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Asset50": {
+                "id": "Asset50",
+                "path": "TestBucketDeployment/BucketDeployment/Asset50",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset50/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/BucketDeployment/Asset50/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "CustomResource-1024MiB": {
+                "id": "CustomResource-1024MiB",
+                "path": "TestBucketDeployment/BucketDeployment/CustomResource-1024MiB",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "TestBucketDeployment/BucketDeployment/CustomResource-1024MiB/Default",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnResource",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CustomResource",
+                  "version": "0.0.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_s3_deployment.BucketDeployment",
+              "version": "0.0.0"
+            }
+          },
+          "Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiB": {
+            "id": "Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiB",
+            "path": "TestBucketDeployment/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiB",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "TestBucketDeployment/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiB/ServiceRole",
+                "children": {
+                  "ImportServiceRole": {
+                    "id": "ImportServiceRole",
+                    "path": "TestBucketDeployment/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiB/ServiceRole/ImportServiceRole",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.Resource",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "TestBucketDeployment/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiB/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "TestBucketDeployment/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiB/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "TestBucketDeployment/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiB/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "s3:GetBucket*",
+                                    "s3:GetObject*",
+                                    "s3:List*"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":s3:::",
+                                          {
+                                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":s3:::",
+                                          {
+                                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                                          }
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiBServiceRoleDefaultPolicy0801355D",
+                            "roles": [
+                              {
+                                "Ref": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiBServiceRole739949D8"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                          "version": "0.0.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Policy",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "OverflowPolicy1": {
+                    "id": "OverflowPolicy1",
+                    "path": "TestBucketDeployment/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiB/ServiceRole/OverflowPolicy1",
+                    "children": {
+                      "ImportedOverflowPolicy1": {
+                        "id": "ImportedOverflowPolicy1",
+                        "path": "TestBucketDeployment/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiB/ServiceRole/OverflowPolicy1/ImportedOverflowPolicy1",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "0.0.0"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "TestBucketDeployment/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiB/ServiceRole/OverflowPolicy1/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::ManagedPolicy",
+                          "aws:cdk:cloudformation:props": {
+                            "description": "Part of the policies for TestBucketDeployment/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiB/ServiceRole",
+                            "path": "/",
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "s3:GetBucket*",
+                                    "s3:GetObject*",
+                                    "s3:List*"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":s3:::",
+                                          {
+                                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":s3:::",
+                                          {
+                                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                                          }
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "roles": [
+                              {
+                                "Ref": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiBServiceRole739949D8"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnManagedPolicy",
+                          "version": "0.0.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.ManagedPolicy",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "OverflowPolicy2": {
+                    "id": "OverflowPolicy2",
+                    "path": "TestBucketDeployment/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiB/ServiceRole/OverflowPolicy2",
+                    "children": {
+                      "ImportedOverflowPolicy2": {
+                        "id": "ImportedOverflowPolicy2",
+                        "path": "TestBucketDeployment/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiB/ServiceRole/OverflowPolicy2/ImportedOverflowPolicy2",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "0.0.0"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "TestBucketDeployment/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiB/ServiceRole/OverflowPolicy2/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::ManagedPolicy",
+                          "aws:cdk:cloudformation:props": {
+                            "description": "Part of the policies for TestBucketDeployment/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiB/ServiceRole",
+                            "path": "/",
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "s3:GetBucket*",
+                                    "s3:GetObject*",
+                                    "s3:List*"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":s3:::",
+                                          {
+                                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":s3:::",
+                                          {
+                                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                                          }
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "Action": [
+                                    "s3:Abort*",
+                                    "s3:DeleteObject*",
+                                    "s3:GetBucket*",
+                                    "s3:GetObject*",
+                                    "s3:List*",
+                                    "s3:PutObject",
+                                    "s3:PutObjectLegalHold",
+                                    "s3:PutObjectRetention",
+                                    "s3:PutObjectTagging",
+                                    "s3:PutObjectVersionTagging"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "Bucket83908E77",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          {
+                                            "Fn::GetAtt": [
+                                              "Bucket83908E77",
+                                              "Arn"
+                                            ]
+                                          },
+                                          "/*"
+                                        ]
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "roles": [
+                              {
+                                "Ref": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiBServiceRole739949D8"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnManagedPolicy",
+                          "version": "0.0.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.ManagedPolicy",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_iam.Role",
+                  "version": "0.0.0"
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "TestBucketDeployment/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiB/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "TestBucketDeployment/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiB/Code/Stage",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "TestBucketDeployment/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiB/Code/AssetBucket",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3_assets.Asset",
+                  "version": "0.0.0"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "TestBucketDeployment/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiB/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                      },
+                      "s3Key": "a597625ac6a5b483a1996f07bdcda01c5b26c14752d20fa9eaf09795556e021e.zip"
+                    },
+                    "environment": {
+                      "variables": {
+                        "AWS_CA_BUNDLE": "/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem"
+                      }
+                    },
+                    "handler": "index.handler",
+                    "layers": [
+                      {
+                        "Ref": "BucketDeploymentAwsCliLayerB018DCE1"
+                      }
+                    ],
+                    "memorySize": 1024,
+                    "role": {
+                      "Fn::GetAtt": [
+                        "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1024MiBServiceRole739949D8",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "python3.9",
+                    "timeout": 900
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                  "version": "0.0.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_lambda.Function",
+              "version": "0.0.0"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "TestBucketDeployment/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "0.0.0"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "TestBucketDeployment/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "0.0.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "0.0.0"
+        }
+      },
+      "IntegBucketDeployment": {
+        "id": "IntegBucketDeployment",
+        "path": "IntegBucketDeployment",
+        "children": {
+          "DefaultTest": {
+            "id": "DefaultTest",
+            "path": "IntegBucketDeployment/DefaultTest",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "IntegBucketDeployment/DefaultTest/Default",
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.3.0"
+                }
+              },
+              "DeployAssert": {
+                "id": "DeployAssert",
+                "path": "IntegBucketDeployment/DefaultTest/DeployAssert",
+                "children": {
+                  "BootstrapVersion": {
+                    "id": "BootstrapVersion",
+                    "path": "IntegBucketDeployment/DefaultTest/DeployAssert/BootstrapVersion",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnParameter",
+                      "version": "0.0.0"
+                    }
+                  },
+                  "CheckBootstrapVersion": {
+                    "id": "CheckBootstrapVersion",
+                    "path": "IntegBucketDeployment/DefaultTest/DeployAssert/CheckBootstrapVersion",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnRule",
+                      "version": "0.0.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Stack",
+                  "version": "0.0.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "@aws-cdk/integ-tests-alpha.IntegTestCase",
+              "version": "0.0.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "@aws-cdk/integ-tests-alpha.IntegTest",
+          "version": "0.0.0"
+        }
+      },
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "constructs.Construct",
+          "version": "10.3.0"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "aws-cdk-lib.App",
+      "version": "0.0.0"
+    }
+  }
+}
