@@ -256,7 +256,7 @@ export interface BucketDeploymentProps {
   /**
    * Object keys deployed to the S3 bucket can be referenced by the `objectKeys` getter.
    * This is useful, but when a large number of objects are deployed,
-   * the custom resource need to return large keys and result in the custom resource error.
+   * the custom resource needs to return large keys, which may result in the custom resource error.
    * If you encounter this error, set this property to `true` to discard object keys.
    *
    * Note that the `objectKeys` getter will return an empty array if this property is set to `true`.
