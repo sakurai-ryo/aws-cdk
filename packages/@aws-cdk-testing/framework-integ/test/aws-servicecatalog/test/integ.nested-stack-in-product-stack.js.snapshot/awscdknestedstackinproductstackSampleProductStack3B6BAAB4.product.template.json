@@ -15,7 +15,7 @@
               {
                 "Ref": "AWS::URLSuffix"
               },
-              "/asset-bucket-12345678-test-region/75d608df75f61dac3fdadd6450401e430ffcdcc3face2dbe3c656ebf102bb8c1.json"
+              "/asset-bucket-593359509969-ap-northeast-1/2fa2eb8832a049d06555cfc47e77c96b905370595a2cb046968b321307edf4d0.json"
             ]
           ]
         }

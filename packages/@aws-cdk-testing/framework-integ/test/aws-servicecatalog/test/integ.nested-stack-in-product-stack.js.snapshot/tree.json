@@ -18,7 +18,7 @@
                 "attributes": {
                   "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
                   "aws:cdk:cloudformation:props": {
-                    "bucketName": "asset-bucket-12345678-test-region",
+                    "bucketName": "asset-bucket-593359509969-ap-northeast-1",
                     "tags": [
                       {
                         "key": "aws-cdk:cr-owned:2278d920",
@@ -73,8 +73,8 @@
                           "aws:cdk:cloudformation:type": "AWS::Lambda::LayerVersion",
                           "aws:cdk:cloudformation:props": {
                             "content": {
-                              "s3Bucket": "cdk-hnb659fds-assets-12345678-test-region",
-                              "s3Key": "e2277687077a2abf9ae1af1cc9565e6715e2ebb62f79ec53aa75a1af9298f642.zip"
+                              "s3Bucket": "cdk-hnb659fds-assets-593359509969-ap-northeast-1",
+                              "s3Key": "3fb6287214999ddeafa7cd0e3e58bc5144c8678bb720f3b5e45e8fd32f333eb3.zip"
                             },
                             "description": "/opt/awscli/aws"
                           }
@@ -230,7 +230,7 @@
                           "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                           "aws:cdk:cloudformation:props": {
                             "code": {
-                              "s3Bucket": "asset-bucket-12345678-test-region",
+                              "s3Bucket": "asset-bucket-593359509969-ap-northeast-1",
                               "s3Key": "d3833f63e813b3a96ea04c8c50ca98209330867f5f6ac358efca11f85a3476c2.zip"
                             },
                             "handler": "index.handler",
@@ -348,7 +348,7 @@
                           "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                           "aws:cdk:cloudformation:props": {
                             "code": {
-                              "s3Bucket": "asset-bucket-12345678-test-region",
+                              "s3Bucket": "asset-bucket-593359509969-ap-northeast-1",
                               "s3Key": "e2204c9fddfc339ea362dec9143b4c22f883d4c18dd38c456f8f6a7161c1073d.zip"
                             },
                             "handler": "index.handler",
@@ -400,7 +400,7 @@
                               {
                                 "Ref": "AWS::URLSuffix"
                               },
-                              "/asset-bucket-12345678-test-region/75d608df75f61dac3fdadd6450401e430ffcdcc3face2dbe3c656ebf102bb8c1.json"
+                              "/asset-bucket-593359509969-ap-northeast-1/2fa2eb8832a049d06555cfc47e77c96b905370595a2cb046968b321307edf4d0.json"
                             ]
                           ]
                         }
@@ -414,7 +414,7 @@
                 },
                 "constructInfo": {
                   "fqn": "constructs.Construct",
-                  "version": "10.2.69"
+                  "version": "10.3.0"
                 }
               },
               "ParentAssetBucket": {
@@ -514,7 +514,7 @@
                                           {
                                             "Ref": "AWS::Partition"
                                           },
-                                          ":s3:::cdk-hnb659fds-assets-12345678-test-region"
+                                          ":s3:::cdk-hnb659fds-assets-593359509969-ap-northeast-1"
                                         ]
                                       ]
                                     },
@@ -526,7 +526,7 @@
                                           {
                                             "Ref": "AWS::Partition"
                                           },
-                                          ":s3:::cdk-hnb659fds-assets-12345678-test-region/*"
+                                          ":s3:::cdk-hnb659fds-assets-593359509969-ap-northeast-1/*"
                                         ]
                                       ]
                                     }
@@ -630,8 +630,8 @@
                   "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
                   "aws:cdk:cloudformation:props": {
                     "code": {
-                      "s3Bucket": "cdk-hnb659fds-assets-12345678-test-region",
-                      "s3Key": "9eb41a5505d37607ac419321497a4f8c21cf0ee1f9b4a6b29aa04301aea5c7fd.zip"
+                      "s3Bucket": "cdk-hnb659fds-assets-593359509969-ap-northeast-1",
+                      "s3Key": "ca591bb578ccab75dff666122d52cf3359c7a4748a08ffb04db4c096f59c7e19.zip"
                     },
                     "environment": {
                       "variables": {
@@ -683,7 +683,7 @@
                         "disableTemplateValidation": false,
                         "info": {
                           "LoadTemplateFromURL": {
-                            "Fn::Sub": "https://s3.test-region.${AWS::URLSuffix}/cdk-hnb659fds-assets-12345678-test-region/b19855fc4d79148d4a4bcf46bdec84d2838a1ff6787e8aa2eaa98c0f7d8b9ac8.json"
+                            "Fn::Sub": "https://s3.ap-northeast-1.${AWS::URLSuffix}/cdk-hnb659fds-assets-593359509969-ap-northeast-1/117955180468b8f8d921adcd042c7619cd1f356e2b7e8b623071c48e6408c86f.json"
                           }
                         }
                       }
@@ -736,7 +736,7 @@
                 "path": "aws-cdk-nested-stack-in-product-stack-integ/DefaultTest/Default",
                 "constructInfo": {
                   "fqn": "constructs.Construct",
-                  "version": "10.2.69"
+                  "version": "10.3.0"
                 }
               },
               "DeployAssert": {
@@ -782,7 +782,7 @@
         "path": "Tree",
         "constructInfo": {
           "fqn": "constructs.Construct",
-          "version": "10.2.69"
+          "version": "10.3.0"
         }
       }
     },
