@@ -164,7 +164,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "3fb6287214999ddeafa7cd0e3e58bc5144c8678bb720f3b5e45e8fd32f333eb3.zip"
+     "S3Key": "3322b7049fb0ed2b7cbb644a2ada8d1116ff80c32dca89e6ada846b5de26f961.zip"
     },
     "Description": "/opt/awscli/aws"
    }
@@ -190,7 +190,8 @@
      "Ref": "Destination920A3C57"
     },
     "RetainOnDelete": false,
-    "Prune": true
+    "Prune": true,
+    "DiscardReturnedSourceObjectKeys": false
    },
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete"
@@ -327,7 +328,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "e976a796f036a5efbf44b99e44cfb5a961df08d8dbf7cd37e60bf216fb982a00.zip"
+     "S3Key": "ca591bb578ccab75dff666122d52cf3359c7a4748a08ffb04db4c096f59c7e19.zip"
     },
     "Environment": {
      "Variables": {
